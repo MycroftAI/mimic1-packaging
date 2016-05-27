@@ -24,7 +24,7 @@ function _run() {
 
 MIMIC_SRC=${TOP}/src
 mkdir -p $MIMIC_SRC
-pushd
+pushd ${MIMIC_SRC}
 git clone https://github.com/MycroftAI/mimic.git
 popd
 pushd $MIMIC_SRC/mimic
