@@ -1,0 +1,9 @@
+Package: %%PACKAGE%%
+Version: %%VERSION%%
+Section: base
+Priority: optional
+Architecture: %%ARCHITECTURE%%
+Pre-Depends: %%PRE_DEPENDS%%
+Maintainer: Arron Atchison <arron.atchison@mycroft.ai>
+Description: %%DESCRIPTION%%
+
