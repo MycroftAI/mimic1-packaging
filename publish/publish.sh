@@ -118,3 +118,8 @@ dpkg-deb --build ${DEB_BASE}
 mv *.deb ${TOP}/dist
 popd
 
+
+cd ${TOP}/dist
+_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer sync --acl-public . s3://bootstrap.mycroft.ai/artifacts/${ARCH}/mimic/${VERSION}/
+echo ${VERSION} > ${TOP}/dist/mimic/latest
+#_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer put --acl-public ${TOP}/dist/latest s3://bootstrap.mycroft.ai/artifacts/${ARCH}/latest#cd ${TOP}/dist
