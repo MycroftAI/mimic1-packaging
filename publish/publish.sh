@@ -41,7 +41,7 @@ echo $MIMIC_ARTIFACT_BASE
 function build_mimic() {
   pushd $MIMIC_SRC/mimic
   make clean
-  ./configure --prefix=${MIMIC_ARTIFACT_DIR}/${MIMIC_SYSTEM_TARGET} ${MIMIC_CONFIG_OPTTIONS}
+  ./configure --prefix=${MIMIC_ARTIFACT_DIR}/${MIMIC_SYSTEM_TARGET} ${MIMIC_CONFIG_OPTIONS}
   make -j ${nproc} && make install
 }
 
