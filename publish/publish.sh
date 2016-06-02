@@ -86,7 +86,7 @@ replace ${CONTROL_FILE} "%%PACKAGE%%" "mimic"
 replace ${CONTROL_FILE} "%%VERSION%%" "${VERSION}"
 replace ${CONTROL_FILE} "%%ARCHITECTURE%%" "${ARCH}"
 replace ${CONTROL_FILE} "%%DESCRIPTION%%" "mimic"
-replace ${CONTROL_FILE} "%%PRE_DEPENDS%%" ""
+#replace ${CONTROL_FILE} "%%PRE_DEPENDS%%" ""
 
 echo "Creating debian preinst file"
 PREINST_FILE=${DEB_DIR}/DEBIAN/preinst
