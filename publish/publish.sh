@@ -45,14 +45,6 @@ function build_mimic() {
   make -j ${nproc} && make install
 }
 
-function replace() {
-  local FILE=$1
-  local PATTERN=$2
-  local VALUE=$3
-  local TMP_FILE="/tmp/$$.replace"
-  cat ${FILE} | sed -e "s/${PATTERN}/${VALUE}/g" > ${TMP_FILE}
-  mv ${TMP_FILE} ${FILE}
-}
 
 #wget https://github.com/MycroftAI/mimic/archive/1.0.0.tar.gz
 
@@ -86,7 +78,7 @@ replace ${CONTROL_FILE} "%%PACKAGE%%" "mimic"
 replace ${CONTROL_FILE} "%%VERSION%%" "${VERSION}"
 replace ${CONTROL_FILE} "%%ARCHITECTURE%%" "${ARCH}"
 replace ${CONTROL_FILE} "%%DESCRIPTION%%" "mimic"
-#replace ${CONTROL_FILE} "%%PRE_DEPENDS%%" ""
+replace ${CONTROL_FILE} "%%PRE_DEPENDS%%" ""
 
 echo "Creating debian preinst file"
 PREINST_FILE=${DEB_DIR}/DEBIAN/preinst
