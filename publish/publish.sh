@@ -112,6 +112,6 @@ popd
 
 
 cd ${TOP}/dist
-#_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer sync --acl-public . s3://bootstrap.mycroft.ai/artifacts/${ARCH}/mimic/${VERSION}/
+_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer sync --acl-public . s3://bootstrap.mycroft.ai/artifacts/${ARCH}/mimic/${VERSION}/
 echo ${VERSION} > ${TOP}/dist/latest
-#_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer put --acl-public ${TOP}/dist/latest s3://bootstrap.mycroft.ai/artifacts/${ARCH}/mimic/
+_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer put --acl-public ${TOP}/dist/latest s3://bootstrap.mycroft.ai/artifacts/${ARCH}/mimic/
