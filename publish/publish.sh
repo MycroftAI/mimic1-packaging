@@ -23,7 +23,8 @@ function _run() {
 }
 
 MIMIC_SRC=${TOP}/src
-mkdir -p $MIMIC_SRC
+rm -Rvf ${MIMIC_SRC}
+mkdir -p ${MIMIC_SRC}
 pushd ${MIMIC_SRC}
 git clone https://github.com/MycroftAI/mimic.git
 popd
