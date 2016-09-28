@@ -1,0 +1,17 @@
+Source: %%PACKAGE%%
+Section: misc
+Priority: optional
+Maintainer: Arron Atchison <arron.atchison@mycroft.ai>
+Build-Depends: debhelper (>=9), python, dh-virtualenv, python-dev, python-setuptools, libffi-dev, libssl-dev, pulseaudio, portaudio19-dev, swig
+Standards-Version: 3.9.7
+
+Package: %%PACKAGE%%
+Priority: optional
+Architecture: any
+Depends: portaudio19-dev, libglib2.0-0, flac, espeak, mpg123, mimic, python, ${python:Depends}, ${shlibs:Depends}
+Description: The primary module that makes up the Mycroft Artificial Intelligence platform
+ Mycroft makes use of the Adapt Intent Parser, Speech-to-Text software, and
+ Text-to-Speech. The idea behind the platform is to be able to voice enable any
+ device and turn it into a smart personal assistant, able to perform a variety
+ of tasks.
+

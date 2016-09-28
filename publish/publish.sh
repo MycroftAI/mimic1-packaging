@@ -20,5 +20,8 @@ DEB_DIR=${MIMIC_SRC}/debian
 
 create_deb_files
 
+cd ${TOP}/src
+tar -cvzf mimic.orig.tar.gz
+
 cd ${MIMIC_SRC}
 debuild -us -uc

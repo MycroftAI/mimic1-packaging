@@ -81,7 +81,7 @@ function git_clone_release {
   pushd ${SRC_DEST}
   git clone ${SRC_URL}
   cd ${SRC_DEST}/${PROJECT_NAME}
-  local VERSION="$(basename $(git describe --abbrev=0 --tags) | sed -e 's/v//g')"
+  VERSION="$(basename $(git describe --abbrev=0 --tags) | sed -e 's/v//g')"
   git checkout ${VERSION}
 }
 
