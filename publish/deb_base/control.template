@@ -1,4 +1,4 @@
-ource: %%PACKAGE%%
+Source: %%PACKAGE%%
 Section: misc
 Priority: optional
 Maintainer: Arron Atchison <arron.atchison@mycroft.ai>

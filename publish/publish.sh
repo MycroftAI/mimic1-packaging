@@ -2,10 +2,10 @@
 # fail on any error
 set -Ee
 # source common functions
-source ../deb-functions.sh
+source deb-functions.sh
 
 TOP=$(cd $(dirname $0)/.. && pwd -L)
-MIMIC_SRC=${TOP}/src/mycroft-core
+MIMIC_SRC=${TOP}/src/mimic
 
 remove_source_path $MIMIC_SRC
 create_source_path $MIMIC_SRC
