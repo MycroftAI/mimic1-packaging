@@ -1,4 +1,4 @@
 install:
- - sudo apt-get install -qq debhelper yes
+ - sudo apt-get install -qq debhelper
 script:
  - publish/publish.sh
