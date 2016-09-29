@@ -1,4 +1,4 @@
 install:
- - sudo apt-get install -qq debhelper devscripts
+ - sudo apt-get install -qq debhelper devscripts libasound2-dev
 script:
  - publish/publish.sh
