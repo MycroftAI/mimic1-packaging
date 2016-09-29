@@ -14,6 +14,7 @@ git_clone_release "mimic" "${TOP}/src" "https://github.com/MycroftAI/mimic.git"
 
 rm -rf ${MIMIC_SRC}/.git
 
+VERSION_OLD=${VERSION}
 VERSION="${VERSION}-1ppa1"
 DATE=$(date -R)
 DEB_DIR=${MIMIC_SRC}/debian
@@ -21,7 +22,7 @@ DEB_DIR=${MIMIC_SRC}/debian
 create_deb_files
 
 cd ${TOP}/src
-tar -cvzf mimic.orig.tar.gz mimic/
+tar -cvzf "mimic_${VERSION_OLD}.orig.tar.gz" mimic/
 
 cd ${MIMIC_SRC}
 debuild -us -uc
