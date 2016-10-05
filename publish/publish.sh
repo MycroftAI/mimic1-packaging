@@ -14,15 +14,23 @@ git_clone_release "mimic" "${TOP}/src" "https://github.com/MycroftAI/mimic.git"
 
 rm -rf ${MIMIC_SRC}/.git
 
+echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+echo "Enter PPA Version:"
+
+read PPAVERSION
+
+echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+
+
 VERSION_OLD=${VERSION}
-VERSION="${VERSION}-1ppa1"
+VERSION="${VERSION}-1ppa${PPAVERSION}"
 DATE=$(date -R)
 DEB_DIR=${MIMIC_SRC}/debian
 
 create_deb_files
 
 cd ${TOP}/src
-tar -cvzf "mimic_${VERSION_OLD}.orig.tar.gz" mimic/
+tar -cvzf "mimic-${VERSION_OLD}.orig.tar.gz" mimic/
 
 cd ${MIMIC_SRC}
-debuild -us -uc
+debuild -S -sa
