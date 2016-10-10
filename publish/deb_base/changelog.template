@@ -1,0 +1,6 @@
+mimic (%%VERSION%%) xenial; urgency=low
+
+  * New upstream version
+
+ -- Mycroft Devs <devops@mycroft.ai>  %%DATE%%
+

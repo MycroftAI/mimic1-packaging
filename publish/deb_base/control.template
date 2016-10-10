@@ -1,8 +1,16 @@
-Package: %%PACKAGE%%
-Version: %%VERSION%%
-Section: base
+Source: %%PACKAGE%%
+Section: misc
 Priority: optional
-Architecture: %%ARCHITECTURE%%
 Maintainer: Arron Atchison <arron.atchison@mycroft.ai>
-Description: %%DESCRIPTION%%
+Build-Depends: debhelper (>=9), build-essential, pkg-config, libasound2-dev
+Standards-Version: 3.9.7
+
+Package: %%PACKAGE%%
+Priority: optional
+Architecture: any
+Depends: pkg-config, libasound2-dev 
+Description: Mimic is a fast, lightweight Text-to-speech engine
+ developed by Mycroft A.I. and VocaliD, based on Carnegie Mellon
+ University’s Flite (Festival-Lite) software. Mimic takes in
+ text and reads it out loud to create a high quality voice.
 
