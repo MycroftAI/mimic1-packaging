@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# fail on all errors
+set -Ee
+
 TOP=$(cd $(dirname $0)/.. && pwd -L)
 BUILD_DIR=${TOP}/build
 DIST_DIR=${TOP}/dist
