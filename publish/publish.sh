@@ -44,7 +44,7 @@ function build_mimic() {
   make clean
   ./autogen.sh
   ./configure --prefix=${MIMIC_ARTIFACT_DIR}/${MIMIC_SYSTEM_TARGET} ${MIMIC_CONFIG_OPTIONS}
-  make && make install # -j ${nproc} 
+  make && make install  -j ${nproc} 
 }
 
 
