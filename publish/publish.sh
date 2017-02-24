@@ -36,14 +36,15 @@ echo $VERSION
 MIMIC_ARTIFACT_BASE="mimic-${ARCH}-${VERSION}"
 MIMIC_ARTIFACT_DIR=${BUILD_DIR}/${MIMIC_ARTIFACT_BASE}
 MIMIC_SYSTEM_TARGET="/usr/local"
-MIMIC_CONFIG_OPTIONS="--with-audio=alsa"
+MIMIC_CONFIG_OPTIONS="--with-audio=alsa --enable-shared"
 echo $MIMIC_ARTIFACT_BASE
 
 function build_mimic() {
   pushd $MIMIC_SRC/mimic
   make clean
+  ./autogen.sh
   ./configure --prefix=${MIMIC_ARTIFACT_DIR}/${MIMIC_SYSTEM_TARGET} ${MIMIC_CONFIG_OPTIONS}
-  make && make install # -j ${nproc} 
+  make && make install  -j ${nproc} 
 }
 
 
