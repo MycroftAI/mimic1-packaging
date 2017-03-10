@@ -1,6 +1,6 @@
 # pycharm
 .idea
 #mimic git clone directory
-src
+src/*
 build
 dist
