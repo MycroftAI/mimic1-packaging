@@ -1,4 +1,4 @@
-mimic (%%VERSION%%) xenial; urgency=low
+mimic (%%VERSION%%~17.04) zesty; urgency=low
 
   * New upstream version
 
