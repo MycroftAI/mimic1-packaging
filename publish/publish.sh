@@ -34,7 +34,9 @@ git clone https://github.com/MycroftAI/mimic.git
 popd
 pushd $MIMIC_SRC/mimic
 VERSION="$(basename $(git describe --abbrev=0 --tags) | sed -e 's/v//g')"
-git checkout tags/${VERSION}
+VERSION="$VERSION+$(date +%s)"
+#git checkout tags/${VERSION}
+git checkout development
 popd
 echo $VERSION
 MIMIC_ARTIFACT_BASE="mimic-${ARCH}-${VERSION}"

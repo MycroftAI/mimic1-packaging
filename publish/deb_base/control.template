@@ -5,4 +5,4 @@ Priority: optional
 Architecture: %%ARCHITECTURE%%
 Maintainer: Arron Atchison <arron.atchison@mycroft.ai>
 Description: %%DESCRIPTION%%
-
+Depends: pcre2-utils
