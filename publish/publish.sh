@@ -30,13 +30,13 @@ MIMIC_SRC=${TOP}/src
 rm -Rvf ${MIMIC_SRC}
 mkdir -p ${MIMIC_SRC}
 pushd ${MIMIC_SRC}
-git clone https://github.com/MycroftAI/mimic.git
+git clone https://github.com/MycroftAI/mimic1.git mimic
 popd
 pushd $MIMIC_SRC/mimic
-VERSION="$(basename $(git describe --abbrev=0 --tags) | sed -e 's/v//g')"
-VERSION="$VERSION+$(date +%s)"
-#git checkout tags/${VERSION}
-git checkout development
+git fetch --tags
+VERSION="$(git tag -l | tail -n 1)"
+#VERSION="$VERSION+$(date +%s)"
+git checkout tags/${VERSION}
 popd
 echo $VERSION
 MIMIC_ARTIFACT_BASE="mimic-${ARCH}-${VERSION}"
@@ -119,6 +119,6 @@ popd
 
 
 cd ${TOP}/dist
-_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer sync --acl-public . s3://bootstrap.mycroft.ai/artifacts/apt/${ARCH}/mimic/${VERSION}/
+#_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer sync --acl-public . s3://bootstrap.mycroft.ai/artifacts/apt/${ARCH}/mimic/${VERSION}/
 echo ${VERSION} > latest
-_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer put --acl-public ${TOP}/dist/latest s3://bootstrap.mycroft.ai/artifacts/apt/${ARCH}/mimic/
+#_run s3cmd -c ${HOME}/.s3cfg.mycroft-artifact-writer put --acl-public ${TOP}/dist/latest s3://bootstrap.mycroft.ai/artifacts/apt/${ARCH}/mimic/
