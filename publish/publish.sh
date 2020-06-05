@@ -33,6 +33,7 @@ pushd ${MIMIC_SRC}
 git clone https://github.com/MycroftAI/mimic.git
 popd
 pushd $MIMIC_SRC/mimic
+git checkout master
 VERSION="$(basename $(git describe --abbrev=0 --tags) | sed -e 's/v//g')"
 git checkout tags/${VERSION}
 popd
